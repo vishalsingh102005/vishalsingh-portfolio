@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans antialiased;
+    @apply bg-slate-50 text-slate-900;
+    @apply dark:bg-surface-dark dark:text-slate-100;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    @apply bg-primary-500/40 text-white;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-primary-600/50;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-500/70;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply border border-white/10 bg-white/5 backdrop-blur-xl;
+    @apply dark:border-white/10 dark:bg-white/[0.06];
+  }
+
+  .glass-card {
+    @apply glass rounded-2xl shadow-glass transition-all duration-300;
+  }
+
+  .glass-card:hover {
+    @apply border-primary-500/30 bg-white/[0.08] shadow-glow;
+  }
+
+  .section-padding {
+    @apply px-4 py-20 sm:px-6 lg:px-8 lg:py-28;
+  }
+
+  .section-container {
+    @apply mx-auto max-w-7xl;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-400 via-accent-violet to-accent-cyan bg-clip-text text-transparent;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-primary-600 to-primary-500 px-6 py-3 font-medium text-white shadow-lg shadow-primary-600/25 transition-all duration-300 hover:scale-[1.02] hover:shadow-glow focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-surface-dark active:scale-[0.98];
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-slate-100/80 px-6 py-3 font-medium text-slate-800 backdrop-blur-sm transition-all duration-300 hover:border-primary-500/50 hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-500/50 active:scale-[0.98];
+    @apply dark:border-white/20 dark:bg-white/5 dark:text-white dark:hover:bg-white/10;
+  }
+
+  .skill-bar {
+    @apply h-2 overflow-hidden rounded-full bg-white/10;
+  }
+
+  .skill-bar-fill {
+    @apply h-full rounded-full bg-gradient-to-r from-primary-500 via-accent-violet to-accent-cyan;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

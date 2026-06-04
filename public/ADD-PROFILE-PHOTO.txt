@@ -1,0 +1,11 @@
+Add your photo here as one of these filenames:
+  - profile.jpg   (recommended)
+  - profile.png
+
+Then open: src/components/ui/ProfileAvatar.jsx
+Change:  SHOW_PROFILE_PHOTO = false
+To:      SHOW_PROFILE_PHOTO = true
+
+If you use profile.png, also change PROFILE_IMAGE to '/profile.png'
+
+Save the file and refresh the browser.
